@@ -1,0 +1,262 @@
+/* 基本的なリセットとフォント設定 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* 淡い青の背景 */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ヘッダー */
+header {
+    background-color: #87ceeb; /* スカイブルー */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header nav {
+    margin-top: 0.5rem;
+}
+
+header nav button {
+    background-color: #4682b4; /* スチールブルー */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* 小さい画面で折り返す */
+}
+
+header nav ul.hidden {
+    display: none;
+}
+
+header nav ul li {
+    margin: 0.5rem 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #e0f2f7; /* 明るい水色 */
+}
+
+/* メインコンテンツ */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+section h2 {
+    color: #4682b4;
+    border-bottom: 2px solid #b3e0ff;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.hidden-section {
+    display: none;
+}
+
+.active-section {
+    display: block;
+}
+
+/* GNH式心の羅針盤 */
+.gnh-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.gnh-question-item {
+    background-color: #e6f7ff; /* 淡い水色 */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #b3e0ff;
+}
+
+.gnh-question-item p {
+    margin-top: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.gnh-question-item select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* ボタン */
+button {
+    background-color: #6a5acd; /* スレートブルー */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block; /* ブロック要素にして幅を調整しやすく */
+    width: fit-content; /* 内容に合わせて幅を調整 */
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #483d8b; /* ダークスレートブルー */
+}
+
+.danger-button {
+    background-color: #dc3545; /* 赤 */
+}
+
+.danger-button:hover {
+    background-color: #c82333;
+}
+
+/* メッセージボックス */
+.message-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #d4edda; /* 緑がかった薄い色 */
+    color: #155724; /* 濃い緑 */
+    border: 1px solid #c3e6cb;
+    display: none; /* 初期状態では非表示 */
+}
+
+.message-box.show {
+    display: block;
+}
+
+/* 心の図書館（記録リスト） */
+#recordList {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.record-item {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.record-item h3 {
+    margin-top: 0;
+    color: #6a5acd;
+    font-size: 1.1rem;
+}
+
+.record-item p {
+    margin-bottom: 5px;
+}
+
+/* 設定 */
+.setting-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+}
+
+.setting-item label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.setting-item input[type="time"],
+.setting-item input[type="text"] {
+    width: calc(100% - 22px); /* パディングとボーダーを考慮 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 600px) {
+    header nav ul {
+        flex-direction: column;
+    }
+    header nav ul li {
+        margin: 0.3rem 0;
+    }
+    main {
+        padding: 10px;
+        margin: 10px auto;
+    }
+    section {
+        padding: 15px;
+    }
+    button {
+        width: 100%;
+    }
+    .setting-item input[type="time"],
+    .setting-item input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
