@@ -1,0 +1,21 @@
+{
+  "name": "ココミチ",
+  "short_name": "ココミチ",
+  "description": "心の負担をゼロにする、あなただけの心の安全基地。",
+  "start_url": "/cocomicchi-pwa/index.html",
+  "display": "standalone",
+  "background_color": "#f0f8ff",
+  "theme_color": "#87ceeb",
+  "icons": [
+    {
+      "src": "/cocomicchi-pwa/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/cocomicchi-pwa/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
