@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ココミチ - 心の羅針盤</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#b3e0ff">
+    <meta name="description" content="心の負担をゼロにする、あなただけの心の安全基地。">
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
+</head>
+<body>
+    <header>
+        <h1>ココミチ</h1>
+        <nav>
+            <button id="toggleMenu">メニュー</button>
+            <ul id="mainMenu" class="hidden">
+                <li><a href="#" id="showGNH">GNH式心の羅針盤</a></li>
+                <li><a href="#" id="showRecords">心の図書館</a></li>
+                <li><a href="#" id="showSettings">設定</a></li>
+                <li><a href="#" id="showAbout">ココミチについて</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gnhSection" class="active-section">
+            <h2>今日のGNH式心の羅針盤</h2>
+            <p>今の心の状態を、直感で選んでみましょう。</p>
+            <div class="gnh-questions">
+                </div>
+            <button id="saveGNH">今日の羅針盤を記録する</button>
+            <div id="gnhResult" class="message-box"></div>
+        </section>
+
+        <section id="recordsSection" class="hidden-section">
+            <h2>心の図書館</h2>
+            <p>これまでの心の記録を振り返り、あなたの変化を感じてみましょう。</p>
+            <div id="recordList">
+                </div>
+            <button id="clearRecords" class="danger-button">全ての記録を削除</button>
+        </section>
+
+        <section id="settingsSection" class="hidden-section">
+            <h2>設定</h2>
+            <p>ココミチをあなた好みにカスタマイズしましょう。</p>
+            <div class="setting-item">
+                <label for="notificationTime">通知時間設定:</label>
+                <input type="time" id="notificationTime">
+                <button id="setNotification">通知を設定</button>
+            </div>
+            <div class="setting-item">
+                <label for="userName">あなたの名前:</label>
+                <input type="text" id="userName" placeholder="例: ゆきの">
+                <button id="saveUserName">名前を保存</button>
+            </div>
+            <div id="settingsMessage" class="message-box"></div>
+        </section>
+
+        <section id="aboutSection" class="hidden-section">
+            <h2>ココミチについて</h2>
+            <p>「ココミチ」は、あなたの心の負担をゼロにし、安心できる居場所となることを目指しています。</p>
+            <p>私たちは、あなたが毎日少しずつ自分と向き合い、小さな幸せを見つけ、自己肯定感を育むお手伝いをします。</p>
+            <p>このアプリは、あなたの「影の功労者」として、そっと寄り添い続けます。</p>
+            <p>ご意見やご感想は、いつでもお待ちしております。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ココミチ AI開発チーム</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Service Worker の登録
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/cocomicchi-pwa/service-worker.js', { scope: '/cocomicchi-pwa/' })
+                    .then(registration => {
+                        console.log('Service Worker registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('Service Worker registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
